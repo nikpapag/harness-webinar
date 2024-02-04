@@ -43,7 +43,7 @@ spec:
       name: Creating Your Infra for the Service
       action: trigger:harness-custom-pipeline
       input:
-        url: 'https://app.harness.io/ng/#/account/dh-iBL35SqqpuqJF0yDjpQ/home/orgs/default/projects/CIQuickstart/pipelines/fetchfromcustom/pipeline-studio/?storeType=INLINE'
+        url: 'https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/module/cd/orgs/default/projects/Onboarding_Demo/pipelines/Onboard_new_App/triggers/?storeType=INLINE'
         inputset:
           provider: ${{ parameters.provider }}
           db: ${{ parameters.db }}
