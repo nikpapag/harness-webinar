@@ -42,6 +42,12 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+        # This field is hidden but needed to authenticate the request to trigger the pipeline
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
   steps:
     # Call Harness Pipelines to create the service infra and other things
     - id: trigger
@@ -53,3 +59,4 @@ spec:
           provider: ${{ parameters.provider }}
           db: ${{ parameters.db }}
           name: ${{ parameters.name }}
+        apikey: ${{ parameters.token }}
