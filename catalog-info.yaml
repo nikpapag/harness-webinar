@@ -16,9 +16,14 @@ spec:
         - name
       properties:
         name:
-          title: Name of your Banking Service - Repository
+          title: Name of your Service
           type: string
           description: Unique name of the service
+    - title: Service Infrastructure Details
+      required:
+        - provider
+        - db
+        - owner  
       properties:
         provider:
           title: Choose a cloud provider for Deployment
