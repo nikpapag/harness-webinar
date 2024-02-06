@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: webinarselfservice
-  title: Python Backend Self Service
+  title: Self Service Application Onboarding
   description: An template to provide self service deployment/governance to developers
   tags:
     - python
@@ -29,7 +29,7 @@ spec:
           title: Choose a cloud provider for Deployment
           type: string
           enum: ['GCP', 'AWS', "AZURE"]
-          default: GCP
+          default: AWS
         db:
           title: Choose a Database Type for the Service
           type: string
@@ -54,9 +54,7 @@ spec:
       name: Creating Your Infra for the Service
       action: trigger:harness-custom-pipeline
       input:
-        url: 'https://app.harness.io/ng/account/AEvncVYZSsOyKPWc5C7VXw/home/orgs/default/projects/idponboardingpipeline/pipelines/selfservice/pipeline-studio/?storeType=INLINE'
+        url: 'https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/module/cd/orgs/DevX/projects/IDPOnboarding/pipelines/provisionpythonapp/pipeline-studio?storeType=INLINE'
         inputset:
-          provider: ${{ parameters.provider }}
-          db: ${{ parameters.db }}
-          name: ${{ parameters.name }}
+          pipelinename: ${{ parameters.name }}
         apikey: ${{ parameters.token }}
